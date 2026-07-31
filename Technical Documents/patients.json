@@ -1,0 +1,629 @@
+[
+  {
+    "patient_id": "P0001",
+    "age": 32,
+    "symptoms": [
+      "low oxygen saturation"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "asthma since childhood"
+  },
+  {
+    "patient_id": "P0002",
+    "age": 46,
+    "symptoms": [
+      "low oxygen saturation",
+      "cough"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "no known comorbidities"
+  },
+  {
+    "patient_id": "P0003",
+    "age": 72,
+    "symptoms": [
+      "fever"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "non-smoker, no significant history"
+  },
+  {
+    "patient_id": "P0004",
+    "age": 47,
+    "symptoms": [
+      "wheezing"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "prior pneumonia episode 2 years ago"
+  },
+  {
+    "patient_id": "P0005",
+    "age": 46,
+    "symptoms": [
+      "loss of appetite",
+      "fatigue",
+      "fever",
+      "shortness of breath"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "recent hospitalization for unrelated surgery"
+  },
+  {
+    "patient_id": "P0006",
+    "age": 53,
+    "symptoms": [
+      "chest pain",
+      "chills"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "non-smoker, no significant history"
+  },
+  {
+    "patient_id": "P0007",
+    "age": 66,
+    "symptoms": [
+      "chills"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "immunocompromised (on chemotherapy)"
+  },
+  {
+    "patient_id": "P0008",
+    "age": 23,
+    "symptoms": [
+      "wheezing",
+      "cough",
+      "sputum production",
+      "confusion"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "no known comorbidities"
+  },
+  {
+    "patient_id": "P0009",
+    "age": 64,
+    "symptoms": [
+      "low oxygen saturation",
+      "cough"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "smoker, prior respiratory issues"
+  },
+  {
+    "patient_id": "P0010",
+    "age": 55,
+    "symptoms": [
+      "chest pain"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "non-smoker, no significant history"
+  },
+  {
+    "patient_id": "P0011",
+    "age": 53,
+    "symptoms": [
+      "confusion",
+      "chills",
+      "shortness of breath",
+      "low oxygen saturation"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "immunocompromised (on chemotherapy)"
+  },
+  {
+    "patient_id": "P0012",
+    "age": 52,
+    "symptoms": [
+      "loss of appetite"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "diabetic, hypertensive"
+  },
+  {
+    "patient_id": "P0013",
+    "age": 38,
+    "symptoms": [
+      "sputum production",
+      "fatigue",
+      "wheezing",
+      "chest pain"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "immunocompromised (on chemotherapy)"
+  },
+  {
+    "patient_id": "P0014",
+    "age": 47,
+    "symptoms": [
+      "chills"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "recent hospitalization for unrelated surgery"
+  },
+  {
+    "patient_id": "P0015",
+    "age": 26,
+    "symptoms": [
+      "loss of appetite",
+      "chills"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "prior pneumonia episode 2 years ago"
+  },
+  {
+    "patient_id": "P0016",
+    "age": 68,
+    "symptoms": [
+      "shortness of breath",
+      "fatigue",
+      "low oxygen saturation",
+      "chest pain"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "no known comorbidities"
+  },
+  {
+    "patient_id": "P0017",
+    "age": 72,
+    "symptoms": [
+      "chills",
+      "chest pain",
+      "shortness of breath",
+      "wheezing"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "elderly, lives in long-term care facility"
+  },
+  {
+    "patient_id": "P0018",
+    "age": 24,
+    "symptoms": [
+      "shortness of breath"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "diabetic, hypertensive"
+  },
+  {
+    "patient_id": "P0019",
+    "age": 26,
+    "symptoms": [
+      "sputum production",
+      "loss of appetite",
+      "rapid breathing",
+      "wheezing"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "asthma since childhood"
+  },
+  {
+    "patient_id": "P0020",
+    "age": 32,
+    "symptoms": [
+      "confusion",
+      "chills",
+      "cough"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "asthma since childhood"
+  },
+  {
+    "patient_id": "P0021",
+    "age": 38,
+    "symptoms": [
+      "fever",
+      "fatigue",
+      "wheezing",
+      "shortness of breath"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "no known comorbidities"
+  },
+  {
+    "patient_id": "P0022",
+    "age": 56,
+    "symptoms": [
+      "shortness of breath",
+      "chills"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "diabetic, hypertensive"
+  },
+  {
+    "patient_id": "P0023",
+    "age": 59,
+    "symptoms": [
+      "fever",
+      "cough",
+      "chills",
+      "fatigue"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "prior pneumonia episode 2 years ago"
+  },
+  {
+    "patient_id": "P0024",
+    "age": 48,
+    "symptoms": [
+      "cough"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "elderly, lives in long-term care facility"
+  },
+  {
+    "patient_id": "P0025",
+    "age": 86,
+    "symptoms": [
+      "shortness of breath",
+      "confusion"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "elderly, lives in long-term care facility"
+  },
+  {
+    "patient_id": "P0026",
+    "age": 51,
+    "symptoms": [
+      "chest pain",
+      "wheezing",
+      "low oxygen saturation",
+      "fatigue"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "recent hospitalization for unrelated surgery"
+  },
+  {
+    "patient_id": "P0027",
+    "age": 74,
+    "symptoms": [
+      "cough",
+      "chest pain",
+      "confusion",
+      "low oxygen saturation"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "immunocompromised (on chemotherapy)"
+  },
+  {
+    "patient_id": "P0028",
+    "age": 88,
+    "symptoms": [
+      "loss of appetite",
+      "chest pain"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "smoker, prior respiratory issues"
+  },
+  {
+    "patient_id": "P0029",
+    "age": 25,
+    "symptoms": [
+      "cough",
+      "fever"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "immunocompromised (on chemotherapy)"
+  },
+  {
+    "patient_id": "P0030",
+    "age": 83,
+    "symptoms": [
+      "fatigue",
+      "confusion"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "elderly, lives in long-term care facility"
+  },
+  {
+    "patient_id": "P0031",
+    "age": 87,
+    "symptoms": [
+      "low oxygen saturation",
+      "loss of appetite"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "COPD, long-term smoker"
+  },
+  {
+    "patient_id": "P0032",
+    "age": 49,
+    "symptoms": [
+      "sputum production",
+      "chest pain",
+      "cough",
+      "loss of appetite"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "recent hospitalization for unrelated surgery"
+  },
+  {
+    "patient_id": "P0033",
+    "age": 72,
+    "symptoms": [
+      "rapid breathing",
+      "fever",
+      "cough",
+      "confusion"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "recent hospitalization for unrelated surgery"
+  },
+  {
+    "patient_id": "P0034",
+    "age": 31,
+    "symptoms": [
+      "chest pain",
+      "low oxygen saturation"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "no known comorbidities"
+  },
+  {
+    "patient_id": "P0035",
+    "age": 35,
+    "symptoms": [
+      "shortness of breath",
+      "fatigue",
+      "rapid breathing",
+      "chest pain"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "non-smoker, no significant history"
+  },
+  {
+    "patient_id": "P0036",
+    "age": 88,
+    "symptoms": [
+      "fever"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "no known comorbidities"
+  },
+  {
+    "patient_id": "P0037",
+    "age": 29,
+    "symptoms": [
+      "shortness of breath",
+      "sputum production"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "elderly, lives in long-term care facility"
+  },
+  {
+    "patient_id": "P0038",
+    "age": 45,
+    "symptoms": [
+      "fever",
+      "shortness of breath",
+      "sputum production",
+      "low oxygen saturation"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "recent hospitalization for unrelated surgery"
+  },
+  {
+    "patient_id": "P0039",
+    "age": 76,
+    "symptoms": [
+      "sputum production",
+      "wheezing",
+      "rapid breathing"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "diabetic, hypertensive"
+  },
+  {
+    "patient_id": "P0040",
+    "age": 55,
+    "symptoms": [
+      "fever",
+      "loss of appetite"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "no known comorbidities"
+  },
+  {
+    "patient_id": "P0041",
+    "age": 58,
+    "symptoms": [
+      "fever"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "COPD, long-term smoker"
+  },
+  {
+    "patient_id": "P0042",
+    "age": 82,
+    "symptoms": [
+      "fever",
+      "wheezing"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "non-smoker, no significant history"
+  },
+  {
+    "patient_id": "P0043",
+    "age": 26,
+    "symptoms": [
+      "confusion"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "prior pneumonia episode 2 years ago"
+  },
+  {
+    "patient_id": "P0044",
+    "age": 33,
+    "symptoms": [
+      "loss of appetite",
+      "low oxygen saturation"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "smoker, prior respiratory issues"
+  },
+  {
+    "patient_id": "P0045",
+    "age": 71,
+    "symptoms": [
+      "fatigue",
+      "chest pain",
+      "chills"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "prior pneumonia episode 2 years ago"
+  },
+  {
+    "patient_id": "P0046",
+    "age": 68,
+    "symptoms": [
+      "confusion",
+      "low oxygen saturation"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "asthma since childhood"
+  },
+  {
+    "patient_id": "P0047",
+    "age": 58,
+    "symptoms": [
+      "fever"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "elderly, lives in long-term care facility"
+  },
+  {
+    "patient_id": "P0048",
+    "age": 27,
+    "symptoms": [
+      "wheezing",
+      "fatigue"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "diabetic, hypertensive"
+  },
+  {
+    "patient_id": "P0049",
+    "age": 26,
+    "symptoms": [
+      "chills",
+      "fatigue"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "diabetic, hypertensive"
+  },
+  {
+    "patient_id": "P0050",
+    "age": 87,
+    "symptoms": [
+      "loss of appetite",
+      "confusion",
+      "wheezing"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "smoker, prior respiratory issues"
+  },
+  {
+    "patient_id": "P0051",
+    "age": 31,
+    "symptoms": [
+      "fatigue",
+      "cough"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "non-smoker, no significant history"
+  },
+  {
+    "patient_id": "P0052",
+    "age": 52,
+    "symptoms": [
+      "loss of appetite",
+      "chest pain",
+      "chills"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "prior pneumonia episode 2 years ago"
+  },
+  {
+    "patient_id": "P0053",
+    "age": 82,
+    "symptoms": [
+      "fatigue",
+      "fever",
+      "cough",
+      "sputum production"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "asthma since childhood"
+  },
+  {
+    "patient_id": "P0054",
+    "age": 18,
+    "symptoms": [
+      "shortness of breath",
+      "confusion",
+      "fatigue"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "diabetic, hypertensive"
+  },
+  {
+    "patient_id": "P0055",
+    "age": 88,
+    "symptoms": [
+      "wheezing",
+      "fever",
+      "cough",
+      "loss of appetite"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "diabetic, hypertensive"
+  },
+  {
+    "patient_id": "P0056",
+    "age": 65,
+    "symptoms": [
+      "sputum production",
+      "shortness of breath"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "smoker, prior respiratory issues"
+  },
+  {
+    "patient_id": "P0057",
+    "age": 64,
+    "symptoms": [
+      "chills"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "prior pneumonia episode 2 years ago"
+  },
+  {
+    "patient_id": "P0058",
+    "age": 31,
+    "symptoms": [
+      "wheezing",
+      "sputum production",
+      "loss of appetite"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "diabetic, hypertensive"
+  },
+  {
+    "patient_id": "P0059",
+    "age": 38,
+    "symptoms": [
+      "sputum production",
+      "fever"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "diabetic, hypertensive"
+  },
+  {
+    "patient_id": "P0060",
+    "age": 70,
+    "symptoms": [
+      "fatigue",
+      "shortness of breath"
+    ],
+    "scan_type": "chest_xray",
+    "relevant_history": "non-smoker, no significant history"
+  }
+]

@@ -1,0 +1,1561 @@
+[
+  {
+    "twin_id": "7008fc16-f83d-49a6-aac2-5af63313a671",
+    "patient_id": "P0001",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.9631,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T08:47:32Z",
+      "patient_id": "P0001",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 96.3% confidence normal reading is broadly consistent with the patient's presenting profile (low oxygen saturation, history: asthma since childhood). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "5578c869-c668-4535-ad3a-446f1f1d0e1b",
+    "patient_id": "P0002",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.9656,
+      "model_version": "v2.0"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T08:50:32Z",
+      "patient_id": "P0002",
+      "model_version": "v2.0"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 96.6% confidence normal reading is broadly consistent with the patient's presenting profile (low oxygen saturation, cough, history: no known comorbidities). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "20beb9c8-2c5c-4278-8dfe-706625af9f25",
+    "patient_id": "P0003",
+    "prediction": {
+      "label": "PNEUMONIA",
+      "confidence": 0.5805,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T08:53:32Z",
+      "patient_id": "P0003",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": false,
+      "high_risk_requires_review": true,
+      "flagged": true,
+      "flag_reasons": [
+        "confidence 0.5805 below threshold 0.75",
+        "prediction 'PNEUMONIA' is a high-risk condition requiring human review regardless of confidence"
+      ]
+    },
+    "explanation": "The model's 58.1% confidence pneumonia prediction is consistent with the patient's presenting symptoms - fever. The patient's history (non-smoker, no significant history) further supports clinical plausibility. This explanation is based on reported symptoms and history, not direct analysis of the scan, since the underlying model is not interpretable at the pixel level.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "c2a8b4a4-22e8-479c-bf35-f1a332d85bf7",
+    "patient_id": "P0004",
+    "prediction": {
+      "label": "PNEUMONIA",
+      "confidence": 0.9817,
+      "model_version": "v2.0"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T08:56:32Z",
+      "patient_id": "P0004",
+      "model_version": "v2.0"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": true,
+      "flagged": true,
+      "flag_reasons": [
+        "prediction 'PNEUMONIA' is a high-risk condition requiring human review regardless of confidence"
+      ]
+    },
+    "explanation": "The model's 98.2% confidence pneumonia prediction is consistent with the patient's presenting symptoms - wheezing. The patient's history (prior pneumonia episode 2 years ago) further supports clinical plausibility. This explanation is based on reported symptoms and history, not direct analysis of the scan, since the underlying model is not interpretable at the pixel level.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "aae1deeb-76c8-4cb2-8958-8e0f0fa2769f",
+    "patient_id": "P0005",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.6028,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T08:59:32Z",
+      "patient_id": "P0005",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": false,
+      "high_risk_requires_review": false,
+      "flagged": true,
+      "flag_reasons": [
+        "confidence 0.6028 below threshold 0.75"
+      ]
+    },
+    "explanation": "The model's 60.3% confidence normal reading is broadly consistent with the patient's presenting profile (loss of appetite, fatigue, fever, shortness of breath, history: recent hospitalization for unrelated surgery). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "d31ab002-4181-4a8d-b787-20c9d26b0496",
+    "patient_id": "P0006",
+    "prediction": {
+      "label": "PNEUMONIA",
+      "confidence": 0.896,
+      "model_version": "v2.0"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T09:02:32Z",
+      "patient_id": "P0006",
+      "model_version": "v2.0"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": true,
+      "flagged": true,
+      "flag_reasons": [
+        "prediction 'PNEUMONIA' is a high-risk condition requiring human review regardless of confidence"
+      ]
+    },
+    "explanation": "The model's 89.6% confidence pneumonia prediction is consistent with the patient's presenting symptoms - chest pain, chills. The patient's history (non-smoker, no significant history) further supports clinical plausibility. This explanation is based on reported symptoms and history, not direct analysis of the scan, since the underlying model is not interpretable at the pixel level.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "69ec53ca-dedf-46ad-b337-6deacca6d8f4",
+    "patient_id": "P0007",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.8484,
+      "model_version": "v2.0"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T09:05:32Z",
+      "patient_id": "P0007",
+      "model_version": "v2.0"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 84.8% confidence normal reading is broadly consistent with the patient's presenting profile (chills, history: immunocompromised (on chemotherapy)). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "65b87f4a-d417-4b64-97bb-b9968492a383",
+    "patient_id": "P0008",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.9305,
+      "model_version": "v2.0"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T09:08:32Z",
+      "patient_id": "P0008",
+      "model_version": "v2.0"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 93.0% confidence normal reading is broadly consistent with the patient's presenting profile (wheezing, cough, sputum production, confusion, history: no known comorbidities). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "29c569ae-7bd6-4dfc-a363-f8f0f3898bb5",
+    "patient_id": "P0009",
+    "prediction": {
+      "label": "PNEUMONIA",
+      "confidence": 0.8423,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T09:11:32Z",
+      "patient_id": "P0009",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": true,
+      "flagged": true,
+      "flag_reasons": [
+        "prediction 'PNEUMONIA' is a high-risk condition requiring human review regardless of confidence"
+      ]
+    },
+    "explanation": "The model's 84.2% confidence pneumonia prediction is consistent with the patient's presenting symptoms - low oxygen saturation, cough. The patient's history (smoker, prior respiratory issues) further supports clinical plausibility. This explanation is based on reported symptoms and history, not direct analysis of the scan, since the underlying model is not interpretable at the pixel level.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "5f624bf2-db01-4aeb-9791-a955925d4d2b",
+    "patient_id": "P0010",
+    "prediction": {
+      "label": "PNEUMONIA",
+      "confidence": 0.946,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T09:14:32Z",
+      "patient_id": "P0010",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": true,
+      "flagged": true,
+      "flag_reasons": [
+        "prediction 'PNEUMONIA' is a high-risk condition requiring human review regardless of confidence"
+      ]
+    },
+    "explanation": "The model's 94.6% confidence pneumonia prediction is consistent with the patient's presenting symptoms - chest pain. The patient's history (non-smoker, no significant history) further supports clinical plausibility. This explanation is based on reported symptoms and history, not direct analysis of the scan, since the underlying model is not interpretable at the pixel level.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "4731f571-2d0a-42a4-928d-22fe2acfad3d",
+    "patient_id": "P0011",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.9053,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T09:17:32Z",
+      "patient_id": "P0011",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 90.5% confidence normal reading is broadly consistent with the patient's presenting profile (confusion, chills, shortness of breath, low oxygen saturation, history: immunocompromised (on chemotherapy)). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "a5f0e80e-9eb5-4f6e-9f4f-d1e700b29165",
+    "patient_id": "P0012",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.9169,
+      "model_version": "v2.0"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T09:20:32Z",
+      "patient_id": "P0012",
+      "model_version": "v2.0"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 91.7% confidence normal reading is broadly consistent with the patient's presenting profile (loss of appetite, history: diabetic, hypertensive). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "98756f46-2830-46c7-a7e2-84ab760fdfcf",
+    "patient_id": "P0013",
+    "prediction": {
+      "label": "PNEUMONIA",
+      "confidence": 0.8957,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T09:23:32Z",
+      "patient_id": "P0013",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": true,
+      "flagged": true,
+      "flag_reasons": [
+        "prediction 'PNEUMONIA' is a high-risk condition requiring human review regardless of confidence"
+      ]
+    },
+    "explanation": "The model's 89.6% confidence pneumonia prediction is consistent with the patient's presenting symptoms - sputum production, fatigue, wheezing, chest pain. The patient's history (immunocompromised (on chemotherapy)) further supports clinical plausibility. This explanation is based on reported symptoms and history, not direct analysis of the scan, since the underlying model is not interpretable at the pixel level.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "2a4adca4-1735-47f2-9b24-1b502d16a86e",
+    "patient_id": "P0014",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.8406,
+      "model_version": "v2.0"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T09:26:32Z",
+      "patient_id": "P0014",
+      "model_version": "v2.0"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 84.1% confidence normal reading is broadly consistent with the patient's presenting profile (chills, history: recent hospitalization for unrelated surgery). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "fd65e64c-2763-452e-b131-76fd60be48ad",
+    "patient_id": "P0015",
+    "prediction": {
+      "label": "PNEUMONIA",
+      "confidence": 0.8421,
+      "model_version": "v2.0"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T09:29:32Z",
+      "patient_id": "P0015",
+      "model_version": "v2.0"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": true,
+      "flagged": true,
+      "flag_reasons": [
+        "prediction 'PNEUMONIA' is a high-risk condition requiring human review regardless of confidence"
+      ]
+    },
+    "explanation": "The model's 84.2% confidence pneumonia prediction is consistent with the patient's presenting symptoms - loss of appetite, chills. The patient's history (prior pneumonia episode 2 years ago) further supports clinical plausibility. This explanation is based on reported symptoms and history, not direct analysis of the scan, since the underlying model is not interpretable at the pixel level.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "7f3bb462-1e61-42d1-9ba4-954b56839530",
+    "patient_id": "P0016",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.9278,
+      "model_version": "v2.0"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T09:32:32Z",
+      "patient_id": "P0016",
+      "model_version": "v2.0"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 92.8% confidence normal reading is broadly consistent with the patient's presenting profile (shortness of breath, fatigue, low oxygen saturation, chest pain, history: no known comorbidities). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "62e5c12d-6c99-419b-bb64-3900c7f7e507",
+    "patient_id": "P0017",
+    "prediction": {
+      "label": "PNEUMONIA",
+      "confidence": 0.9829,
+      "model_version": "v2.0"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T09:35:32Z",
+      "patient_id": "P0017",
+      "model_version": "v2.0"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": true,
+      "flagged": true,
+      "flag_reasons": [
+        "prediction 'PNEUMONIA' is a high-risk condition requiring human review regardless of confidence"
+      ]
+    },
+    "explanation": "The model's 98.3% confidence pneumonia prediction is consistent with the patient's presenting symptoms - chills, chest pain, shortness of breath, wheezing. The patient's history (elderly, lives in long-term care facility) further supports clinical plausibility. This explanation is based on reported symptoms and history, not direct analysis of the scan, since the underlying model is not interpretable at the pixel level.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "1f6bdec8-ab01-43f8-9319-e456efa2d9cf",
+    "patient_id": "P0018",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.9094,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T09:38:32Z",
+      "patient_id": "P0018",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 90.9% confidence normal reading is broadly consistent with the patient's presenting profile (shortness of breath, history: diabetic, hypertensive). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "5c4811cd-42de-41b4-a228-cfd3383314ee",
+    "patient_id": "P0019",
+    "prediction": {
+      "label": "PNEUMONIA",
+      "confidence": 0.8387,
+      "model_version": "v1.9"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T09:41:32Z",
+      "patient_id": "P0019",
+      "model_version": "v1.9"
+    },
+    "compliance": {
+      "model_version_approved": false,
+      "confidence_ok": true,
+      "high_risk_requires_review": true,
+      "flagged": true,
+      "flag_reasons": [
+        "model_version 'v1.9' not in approved list ['v2.0', 'v2.1']",
+        "prediction 'PNEUMONIA' is a high-risk condition requiring human review regardless of confidence"
+      ]
+    },
+    "explanation": "The model's 83.9% confidence pneumonia prediction is consistent with the patient's presenting symptoms - sputum production, loss of appetite, rapid breathing, wheezing. The patient's history (asthma since childhood) further supports clinical plausibility. This explanation is based on reported symptoms and history, not direct analysis of the scan, since the underlying model is not interpretable at the pixel level.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "e8e6b3a8-0c87-47ca-9f80-16fb920eb7e0",
+    "patient_id": "P0020",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.8203,
+      "model_version": "v2.0"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T09:44:32Z",
+      "patient_id": "P0020",
+      "model_version": "v2.0"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 82.0% confidence normal reading is broadly consistent with the patient's presenting profile (confusion, chills, cough, history: asthma since childhood). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "9aaa3dcd-36cf-45fe-8dd8-eedc8b680ffb",
+    "patient_id": "P0021",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.8883,
+      "model_version": "v2.0"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T09:47:32Z",
+      "patient_id": "P0021",
+      "model_version": "v2.0"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 88.8% confidence normal reading is broadly consistent with the patient's presenting profile (fever, fatigue, wheezing, shortness of breath, history: no known comorbidities). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "dc05774b-cc60-4bf9-b88c-57dc9e6bffd1",
+    "patient_id": "P0022",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.9268,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T09:50:32Z",
+      "patient_id": "P0022",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 92.7% confidence normal reading is broadly consistent with the patient's presenting profile (shortness of breath, chills, history: diabetic, hypertensive). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "6d27d432-f4d8-44da-8b1f-c4ace3625f30",
+    "patient_id": "P0023",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.9164,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T09:53:32Z",
+      "patient_id": "P0023",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 91.6% confidence normal reading is broadly consistent with the patient's presenting profile (fever, cough, chills, fatigue, history: prior pneumonia episode 2 years ago). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "16b43b28-12c6-4a97-bc32-a50983640bf5",
+    "patient_id": "P0024",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.9705,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T09:56:32Z",
+      "patient_id": "P0024",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 97.0% confidence normal reading is broadly consistent with the patient's presenting profile (cough, history: elderly, lives in long-term care facility). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "f9237239-0c58-47df-94cd-ba7b4574036e",
+    "patient_id": "P0025",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.9596,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T09:59:32Z",
+      "patient_id": "P0025",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 96.0% confidence normal reading is broadly consistent with the patient's presenting profile (shortness of breath, confusion, history: elderly, lives in long-term care facility). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "9c30d8da-47af-45f0-8c7f-5551118914ec",
+    "patient_id": "P0026",
+    "prediction": {
+      "label": "PNEUMONIA",
+      "confidence": 0.5841,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T10:02:32Z",
+      "patient_id": "P0026",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": false,
+      "high_risk_requires_review": true,
+      "flagged": true,
+      "flag_reasons": [
+        "confidence 0.5841 below threshold 0.75",
+        "prediction 'PNEUMONIA' is a high-risk condition requiring human review regardless of confidence"
+      ]
+    },
+    "explanation": "The model's 58.4% confidence pneumonia prediction is consistent with the patient's presenting symptoms - chest pain, wheezing, low oxygen saturation, fatigue. The patient's history (recent hospitalization for unrelated surgery) further supports clinical plausibility. This explanation is based on reported symptoms and history, not direct analysis of the scan, since the underlying model is not interpretable at the pixel level.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "ab668124-bbb6-4cd4-ac49-d02ae1114b09",
+    "patient_id": "P0027",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.8153,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T10:05:32Z",
+      "patient_id": "P0027",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 81.5% confidence normal reading is broadly consistent with the patient's presenting profile (cough, chest pain, confusion, low oxygen saturation, history: immunocompromised (on chemotherapy)). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "7514a63d-dcb6-4bf5-aee5-f532a4db2baf",
+    "patient_id": "P0028",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.8122,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T10:08:32Z",
+      "patient_id": "P0028",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 81.2% confidence normal reading is broadly consistent with the patient's presenting profile (loss of appetite, chest pain, history: smoker, prior respiratory issues). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "915765f2-ded3-4222-9430-0c116faa96b6",
+    "patient_id": "P0029",
+    "prediction": {
+      "label": "PNEUMONIA",
+      "confidence": 0.7349,
+      "model_version": "v2.0"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T10:11:32Z",
+      "patient_id": "P0029",
+      "model_version": "v2.0"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": false,
+      "high_risk_requires_review": true,
+      "flagged": true,
+      "flag_reasons": [
+        "confidence 0.7349 below threshold 0.75",
+        "prediction 'PNEUMONIA' is a high-risk condition requiring human review regardless of confidence"
+      ]
+    },
+    "explanation": "The model's 73.5% confidence pneumonia prediction is consistent with the patient's presenting symptoms - cough, fever. The patient's history (immunocompromised (on chemotherapy)) further supports clinical plausibility. This explanation is based on reported symptoms and history, not direct analysis of the scan, since the underlying model is not interpretable at the pixel level.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "8daa93fc-eb8a-4a7b-ad16-8fe4fdac576c",
+    "patient_id": "P0030",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.8723,
+      "model_version": "v1.9"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T10:14:32Z",
+      "patient_id": "P0030",
+      "model_version": "v1.9"
+    },
+    "compliance": {
+      "model_version_approved": false,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": true,
+      "flag_reasons": [
+        "model_version 'v1.9' not in approved list ['v2.0', 'v2.1']"
+      ]
+    },
+    "explanation": "The model's 87.2% confidence normal reading is broadly consistent with the patient's presenting profile (fatigue, confusion, history: elderly, lives in long-term care facility). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "1e940377-b28d-4374-a2c7-115b04184ec4",
+    "patient_id": "P0031",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.9622,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T10:17:32Z",
+      "patient_id": "P0031",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 96.2% confidence normal reading is broadly consistent with the patient's presenting profile (low oxygen saturation, loss of appetite, history: COPD, long-term smoker). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "db39a4ce-a53e-484c-b7e8-594c05fde6f3",
+    "patient_id": "P0032",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.952,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T10:20:32Z",
+      "patient_id": "P0032",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 95.2% confidence normal reading is broadly consistent with the patient's presenting profile (sputum production, chest pain, cough, loss of appetite, history: recent hospitalization for unrelated surgery). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "9bf6f737-1658-40c0-9f5c-257ebdc10b02",
+    "patient_id": "P0033",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.8055,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T10:23:32Z",
+      "patient_id": "P0033",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 80.5% confidence normal reading is broadly consistent with the patient's presenting profile (rapid breathing, fever, cough, confusion, history: recent hospitalization for unrelated surgery). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "1286bd75-6ee5-4fb0-a9e4-1ca0d9ec1380",
+    "patient_id": "P0034",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.9747,
+      "model_version": "v2.0"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T10:26:32Z",
+      "patient_id": "P0034",
+      "model_version": "v2.0"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 97.5% confidence normal reading is broadly consistent with the patient's presenting profile (chest pain, low oxygen saturation, history: no known comorbidities). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "6efc9986-6cc0-410d-8045-818bf3b103b3",
+    "patient_id": "P0035",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.926,
+      "model_version": "v1.9"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T10:29:32Z",
+      "patient_id": "P0035",
+      "model_version": "v1.9"
+    },
+    "compliance": {
+      "model_version_approved": false,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": true,
+      "flag_reasons": [
+        "model_version 'v1.9' not in approved list ['v2.0', 'v2.1']"
+      ]
+    },
+    "explanation": "The model's 92.6% confidence normal reading is broadly consistent with the patient's presenting profile (shortness of breath, fatigue, rapid breathing, chest pain, history: non-smoker, no significant history). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "cea0cc8e-03d1-45bc-9ccb-0f09b55a1a53",
+    "patient_id": "P0036",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.8345,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T10:32:32Z",
+      "patient_id": "P0036",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 83.5% confidence normal reading is broadly consistent with the patient's presenting profile (fever, history: no known comorbidities). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "f8c6ee7b-ec2d-4016-80de-2f061da3d850",
+    "patient_id": "P0037",
+    "prediction": {
+      "label": "PNEUMONIA",
+      "confidence": 0.8849,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T10:35:32Z",
+      "patient_id": "P0037",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": true,
+      "flagged": true,
+      "flag_reasons": [
+        "prediction 'PNEUMONIA' is a high-risk condition requiring human review regardless of confidence"
+      ]
+    },
+    "explanation": "The model's 88.5% confidence pneumonia prediction is consistent with the patient's presenting symptoms - shortness of breath, sputum production. The patient's history (elderly, lives in long-term care facility) further supports clinical plausibility. This explanation is based on reported symptoms and history, not direct analysis of the scan, since the underlying model is not interpretable at the pixel level.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "aa08ab7f-ad03-4e00-8176-a33f1e14d510",
+    "patient_id": "P0038",
+    "prediction": {
+      "label": "PNEUMONIA",
+      "confidence": 0.5585,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T10:38:32Z",
+      "patient_id": "P0038",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": false,
+      "high_risk_requires_review": true,
+      "flagged": true,
+      "flag_reasons": [
+        "confidence 0.5585 below threshold 0.75",
+        "prediction 'PNEUMONIA' is a high-risk condition requiring human review regardless of confidence"
+      ]
+    },
+    "explanation": "The model's 55.9% confidence pneumonia prediction is consistent with the patient's presenting symptoms - fever, shortness of breath, sputum production, low oxygen saturation. The patient's history (recent hospitalization for unrelated surgery) further supports clinical plausibility. This explanation is based on reported symptoms and history, not direct analysis of the scan, since the underlying model is not interpretable at the pixel level.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "b32a6afb-2f41-4853-a88d-cfe63b283b0f",
+    "patient_id": "P0039",
+    "prediction": {
+      "label": "PNEUMONIA",
+      "confidence": 0.4841,
+      "model_version": "v1.9"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T10:41:32Z",
+      "patient_id": "P0039",
+      "model_version": "v1.9"
+    },
+    "compliance": {
+      "model_version_approved": false,
+      "confidence_ok": false,
+      "high_risk_requires_review": true,
+      "flagged": true,
+      "flag_reasons": [
+        "model_version 'v1.9' not in approved list ['v2.0', 'v2.1']",
+        "confidence 0.4841 below threshold 0.75",
+        "prediction 'PNEUMONIA' is a high-risk condition requiring human review regardless of confidence"
+      ]
+    },
+    "explanation": "The model's 48.4% confidence pneumonia prediction is consistent with the patient's presenting symptoms - sputum production, wheezing, rapid breathing. The patient's history (diabetic, hypertensive) further supports clinical plausibility. This explanation is based on reported symptoms and history, not direct analysis of the scan, since the underlying model is not interpretable at the pixel level.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "639786cf-7e6b-4693-8470-cab24d498469",
+    "patient_id": "P0040",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.9181,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T10:44:32Z",
+      "patient_id": "P0040",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 91.8% confidence normal reading is broadly consistent with the patient's presenting profile (fever, loss of appetite, history: no known comorbidities). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "43377b2e-6aba-40cc-b545-087815d5bb3c",
+    "patient_id": "P0041",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.8414,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T10:47:32Z",
+      "patient_id": "P0041",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 84.1% confidence normal reading is broadly consistent with the patient's presenting profile (fever, history: COPD, long-term smoker). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "ffdcf68b-bdd7-4850-9808-79f063315cd8",
+    "patient_id": "P0042",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.9421,
+      "model_version": "v2.0"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T10:50:32Z",
+      "patient_id": "P0042",
+      "model_version": "v2.0"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 94.2% confidence normal reading is broadly consistent with the patient's presenting profile (fever, wheezing, history: non-smoker, no significant history). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "e41c06fd-bc9a-444b-9868-0772e8aaf84c",
+    "patient_id": "P0043",
+    "prediction": {
+      "label": "PNEUMONIA",
+      "confidence": 0.5613,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T10:53:32Z",
+      "patient_id": "P0043",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": false,
+      "high_risk_requires_review": true,
+      "flagged": true,
+      "flag_reasons": [
+        "confidence 0.5613 below threshold 0.75",
+        "prediction 'PNEUMONIA' is a high-risk condition requiring human review regardless of confidence"
+      ]
+    },
+    "explanation": "The model's 56.1% confidence pneumonia prediction is consistent with the patient's presenting symptoms - confusion. The patient's history (prior pneumonia episode 2 years ago) further supports clinical plausibility. This explanation is based on reported symptoms and history, not direct analysis of the scan, since the underlying model is not interpretable at the pixel level.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "02e306a5-56ad-4d3d-824d-cf00f709c232",
+    "patient_id": "P0044",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.8144,
+      "model_version": "v2.0"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T10:56:32Z",
+      "patient_id": "P0044",
+      "model_version": "v2.0"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 81.4% confidence normal reading is broadly consistent with the patient's presenting profile (loss of appetite, low oxygen saturation, history: smoker, prior respiratory issues). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "ce9014a7-0d80-4648-9866-01bbf5e055b6",
+    "patient_id": "P0045",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.9616,
+      "model_version": "v2.0"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T10:59:32Z",
+      "patient_id": "P0045",
+      "model_version": "v2.0"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 96.2% confidence normal reading is broadly consistent with the patient's presenting profile (fatigue, chest pain, chills, history: prior pneumonia episode 2 years ago). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "7a30dd14-b3a8-4996-9322-0f23e8ab8999",
+    "patient_id": "P0046",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.6202,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T11:02:32Z",
+      "patient_id": "P0046",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": false,
+      "high_risk_requires_review": false,
+      "flagged": true,
+      "flag_reasons": [
+        "confidence 0.6202 below threshold 0.75"
+      ]
+    },
+    "explanation": "The model's 62.0% confidence normal reading is broadly consistent with the patient's presenting profile (confusion, low oxygen saturation, history: asthma since childhood). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "d7f8fbee-a294-4f48-8b5f-07de5b01b945",
+    "patient_id": "P0047",
+    "prediction": {
+      "label": "PNEUMONIA",
+      "confidence": 0.7348,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T11:05:32Z",
+      "patient_id": "P0047",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": false,
+      "high_risk_requires_review": true,
+      "flagged": true,
+      "flag_reasons": [
+        "confidence 0.7348 below threshold 0.75",
+        "prediction 'PNEUMONIA' is a high-risk condition requiring human review regardless of confidence"
+      ]
+    },
+    "explanation": "The model's 73.5% confidence pneumonia prediction is consistent with the patient's presenting symptoms - fever. The patient's history (elderly, lives in long-term care facility) further supports clinical plausibility. This explanation is based on reported symptoms and history, not direct analysis of the scan, since the underlying model is not interpretable at the pixel level.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "2118fb0f-499e-4ea1-ac91-6118b493ada1",
+    "patient_id": "P0048",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.9575,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T11:08:32Z",
+      "patient_id": "P0048",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 95.8% confidence normal reading is broadly consistent with the patient's presenting profile (wheezing, fatigue, history: diabetic, hypertensive). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "21ea8217-37e3-4a80-b3ad-1ca08911d631",
+    "patient_id": "P0049",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.9236,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T11:11:32Z",
+      "patient_id": "P0049",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 92.4% confidence normal reading is broadly consistent with the patient's presenting profile (chills, fatigue, history: diabetic, hypertensive). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "2a0bf2fc-ac91-4838-8731-7afe2c3b2b46",
+    "patient_id": "P0050",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.9126,
+      "model_version": "v2.0"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T11:14:32Z",
+      "patient_id": "P0050",
+      "model_version": "v2.0"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 91.3% confidence normal reading is broadly consistent with the patient's presenting profile (loss of appetite, confusion, wheezing, history: smoker, prior respiratory issues). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "eefe3c11-cc18-4ae3-aefa-343354a863d5",
+    "patient_id": "P0051",
+    "prediction": {
+      "label": "PNEUMONIA",
+      "confidence": 0.9379,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T11:17:32Z",
+      "patient_id": "P0051",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": true,
+      "flagged": true,
+      "flag_reasons": [
+        "prediction 'PNEUMONIA' is a high-risk condition requiring human review regardless of confidence"
+      ]
+    },
+    "explanation": "The model's 93.8% confidence pneumonia prediction is consistent with the patient's presenting symptoms - fatigue, cough. The patient's history (non-smoker, no significant history) further supports clinical plausibility. This explanation is based on reported symptoms and history, not direct analysis of the scan, since the underlying model is not interpretable at the pixel level.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "c367235b-914d-4a28-896d-e2c48626d20f",
+    "patient_id": "P0052",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.8639,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T11:20:32Z",
+      "patient_id": "P0052",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 86.4% confidence normal reading is broadly consistent with the patient's presenting profile (loss of appetite, chest pain, chills, history: prior pneumonia episode 2 years ago). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "2c40758e-65c8-47d7-a56b-460b9b901010",
+    "patient_id": "P0053",
+    "prediction": {
+      "label": "PNEUMONIA",
+      "confidence": 0.901,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T11:23:32Z",
+      "patient_id": "P0053",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": true,
+      "flagged": true,
+      "flag_reasons": [
+        "prediction 'PNEUMONIA' is a high-risk condition requiring human review regardless of confidence"
+      ]
+    },
+    "explanation": "The model's 90.1% confidence pneumonia prediction is consistent with the patient's presenting symptoms - fatigue, fever, cough, sputum production. The patient's history (asthma since childhood) further supports clinical plausibility. This explanation is based on reported symptoms and history, not direct analysis of the scan, since the underlying model is not interpretable at the pixel level.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "82255541-d903-4330-a89c-a2dd55536d80",
+    "patient_id": "P0054",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.8363,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T11:26:32Z",
+      "patient_id": "P0054",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 83.6% confidence normal reading is broadly consistent with the patient's presenting profile (shortness of breath, confusion, fatigue, history: diabetic, hypertensive). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "b98c75a7-143d-4245-b39d-9f3ccd1c1ae9",
+    "patient_id": "P0055",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.9312,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T11:29:32Z",
+      "patient_id": "P0055",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 93.1% confidence normal reading is broadly consistent with the patient's presenting profile (wheezing, fever, cough, loss of appetite, history: diabetic, hypertensive). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "3831de2f-1a6f-4c60-9d6d-abdfca53b35f",
+    "patient_id": "P0056",
+    "prediction": {
+      "label": "PNEUMONIA",
+      "confidence": 0.6795,
+      "model_version": "v2.0"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T11:32:32Z",
+      "patient_id": "P0056",
+      "model_version": "v2.0"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": false,
+      "high_risk_requires_review": true,
+      "flagged": true,
+      "flag_reasons": [
+        "confidence 0.6795 below threshold 0.75",
+        "prediction 'PNEUMONIA' is a high-risk condition requiring human review regardless of confidence"
+      ]
+    },
+    "explanation": "The model's 68.0% confidence pneumonia prediction is consistent with the patient's presenting symptoms - sputum production, shortness of breath. The patient's history (smoker, prior respiratory issues) further supports clinical plausibility. This explanation is based on reported symptoms and history, not direct analysis of the scan, since the underlying model is not interpretable at the pixel level.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "6333d1da-54b8-4e9b-abf8-685b9ca9e049",
+    "patient_id": "P0057",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.8899,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T11:35:32Z",
+      "patient_id": "P0057",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 89.0% confidence normal reading is broadly consistent with the patient's presenting profile (chills, history: prior pneumonia episode 2 years ago). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "912dbff2-e910-4be2-83ee-816257ab840e",
+    "patient_id": "P0058",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.8668,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T11:38:32Z",
+      "patient_id": "P0058",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 86.7% confidence normal reading is broadly consistent with the patient's presenting profile (wheezing, sputum production, loss of appetite, history: diabetic, hypertensive). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "307e5ad1-c0e9-431d-811c-f8e5ac9a9ae4",
+    "patient_id": "P0059",
+    "prediction": {
+      "label": "PNEUMONIA",
+      "confidence": 0.6347,
+      "model_version": "v2.0"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T11:41:32Z",
+      "patient_id": "P0059",
+      "model_version": "v2.0"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": false,
+      "high_risk_requires_review": true,
+      "flagged": true,
+      "flag_reasons": [
+        "confidence 0.6347 below threshold 0.75",
+        "prediction 'PNEUMONIA' is a high-risk condition requiring human review regardless of confidence"
+      ]
+    },
+    "explanation": "The model's 63.5% confidence pneumonia prediction is consistent with the patient's presenting symptoms - sputum production, fever. The patient's history (diabetic, hypertensive) further supports clinical plausibility. This explanation is based on reported symptoms and history, not direct analysis of the scan, since the underlying model is not interpretable at the pixel level.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  },
+  {
+    "twin_id": "1111192a-cfa8-4a5c-87f8-cd81b9afef58",
+    "patient_id": "P0060",
+    "prediction": {
+      "label": "NORMAL",
+      "confidence": 0.8525,
+      "model_version": "v2.1"
+    },
+    "lineage": {
+      "source": "vit-xray-pneumonia-classification",
+      "input_captured_at": "2026-07-31T11:44:32Z",
+      "patient_id": "P0060",
+      "model_version": "v2.1"
+    },
+    "compliance": {
+      "model_version_approved": true,
+      "confidence_ok": true,
+      "high_risk_requires_review": false,
+      "flagged": false,
+      "flag_reasons": []
+    },
+    "explanation": "The model's 85.2% confidence normal reading is broadly consistent with the patient's presenting profile (fatigue, shortness of breath, history: non-smoker, no significant history). No high-risk indicators were surfaced by the diagnostic model for this scan.",
+    "explanation_type": "narrative_rule_based_fallback",
+    "twin_created_at": "2026-07-31T09:00:21Z"
+  }
+]
