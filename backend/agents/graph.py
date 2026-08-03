@@ -60,3 +60,63 @@ def run_trust_fabric_pipeline(prediction_input: dict, patient_context: dict, rul
     }
     final_state = trust_fabric_graph.invoke(initial_state)
     return final_state["twin"]
+
+
+def run_trust_fabric_pipeline_with_progress(
+    prediction_input: dict,
+    patient_context: dict,
+    rulebook: dict,
+    request_id: str,
+) -> dict:
+    """
+    Identical pipeline, identical output, but uses LangGraph's .stream()
+    instead of .invoke() so a progress tracker (backend/services/
+    progress_service.py) can be updated after each of the 4 agents
+    actually finishes -- enabling real (not simulated) per-stage progress
+    in the UI via GET /predictions/stream/{request_id}/status.
+    """
+    from backend.services import progress_service
+
+    initial_state: AgentState = {
+        "patient_id": prediction_input["patient_id"],
+        "prediction_input": prediction_input,
+        "patient_context": patient_context,
+        "rulebook": rulebook,
+        "lineage": None,
+        "compliance": None,
+        "explanation": None,
+        "twin": None,
+        "error": None,
+    }
+
+    node_to_stage = {
+        "lineage_step": "lineage",
+        "compliance_step": "compliance",
+        "explainability_step": "explainability",
+        "twin_assembler_step": "twin_assembler",
+    }
+
+    final_twin = None
+    progress_service.mark_stage_started(request_id, "lineage")
+
+    for chunk in trust_fabric_graph.stream(initial_state):
+        for node_name, updated_state in chunk.items():
+            stage = node_to_stage.get(node_name)
+            if stage is None:
+                continue
+            progress_service.mark_stage_complete(request_id, stage)
+
+            next_stage = _next_stage_after(stage)
+            if next_stage:
+                progress_service.mark_stage_started(request_id, next_stage)
+
+            if stage == "twin_assembler":
+                final_twin = updated_state.get("twin")
+
+    return final_twin
+
+
+def _next_stage_after(stage: str) -> str | None:
+    order = ["lineage", "compliance", "explainability", "twin_assembler"]
+    idx = order.index(stage)
+    return order[idx + 1] if idx + 1 < len(order) else None

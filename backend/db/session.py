@@ -8,17 +8,19 @@ import os
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.pool import StaticPool
 
 DATABASE_URL = os.environ.get(
     "DATABASE_URL",
     "postgresql://trust_fabric:trust_fabric_dev_password@localhost:5432/trust_fabric",
 )
 
-connect_args = {}
+engine_kwargs: dict = {}
 if DATABASE_URL.startswith("sqlite"):
-    connect_args = {"check_same_thread": False}
+    engine_kwargs["connect_args"] = {"check_same_thread": False}
+    engine_kwargs["poolclass"] = StaticPool
 
-engine = create_engine(DATABASE_URL, connect_args=connect_args, future=True)
+engine = create_engine(DATABASE_URL, **engine_kwargs, future=True)
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False, future=True)
 
 

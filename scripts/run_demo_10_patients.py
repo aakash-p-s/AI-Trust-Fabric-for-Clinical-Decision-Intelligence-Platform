@@ -2,9 +2,15 @@
 scripts/run_demo_10_patients.py
 -----------------------------------------------------
 A curated 10-patient subset of data/predictions.json, sent one at a time
-with a deliberate delay, so you can watch each prediction appear live on
-the Dashboard while this script runs -- rather than silently bulk-loading
-all 60 seed predictions in the background before opening the browser.
+via the STREAMING endpoint (POST /predictions/stream), so the Dashboard's
+"Now Processing" panel can show live per-stage progress for each patient
+in real time -- purely by polling the backend, without the browser ever
+having to be the thing that triggered the request.
+
+This script itself also polls each patient's own status until it's done
+before moving to the next one, so patients are still processed strictly
+one at a time (matching the original behavior), and prints the stage
+transitions to this terminal too, as a bonus.
 
 The 10 patients are chosen to demonstrate every distinct compliance
 outcome the system supports, not picked at random:
@@ -44,15 +50,51 @@ from pathlib import Path
 
 import requests
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from backend.demo_data import DEMO_PATIENT_IDS  # noqa: E402
+
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
-API_URL = "http://localhost:8000/predictions"
+START_URL = "http://localhost:8000/predictions/stream"
+STATUS_URL_TEMPLATE = "http://localhost:8000/predictions/stream/{request_id}/status"
 
-DEMO_PATIENT_IDS = [
-    "P0001", "P0002", "P0007", "P0011",  # cleared
-    "P0009", "P0059", "P0003", "P0019", "P0030", "P0046",  # flagged, varied reasons
-]
+DELAY_BETWEEN_PATIENTS_SECONDS = 1.5  # brief pause after one finishes, before starting the next
+POLL_INTERVAL_SECONDS = 0.4
+POLL_TIMEOUT_SECONDS = 150
 
-DELAY_SECONDS = 4  # pause between each so you can watch the Dashboard update
+
+def process_one_patient(record: dict) -> dict:
+    """Starts the streaming pipeline for one patient and polls until done,
+    printing each stage transition. Returns the final status dict."""
+    start_response = requests.post(START_URL, json=record, timeout=10)
+    start_response.raise_for_status()
+    request_id = start_response.json()["request_id"]
+
+    seen_stages: set = set()
+    deadline = time.time() + POLL_TIMEOUT_SECONDS
+
+    while time.time() < deadline:
+        status_response = requests.get(
+            STATUS_URL_TEMPLATE.format(request_id=request_id), timeout=10
+        )
+        status_response.raise_for_status()
+        status = status_response.json()
+
+        for stage in status["completed_stages"]:
+            if stage not in seen_stages:
+                seen_stages.add(stage)
+                print(f"    -> {stage} complete")
+
+        if status["done"]:
+            return status
+
+        time.sleep(POLL_INTERVAL_SECONDS)
+
+    raise TimeoutError(
+        f"This script gave up waiting after {POLL_TIMEOUT_SECONDS}s -- the LLM call "
+        "may just be slow. The backend keeps processing regardless of this script's "
+        "timeout, so the twin may still complete successfully; check the Dashboard "
+        "or query GET /twins?search=<patient_id> to confirm."
+    )
 
 
 def main():
@@ -64,35 +106,40 @@ def main():
         print(f"ERROR: these patient IDs are not in predictions.json: {missing}")
         sys.exit(1)
 
-    print(f"Sending {len(DEMO_PATIENT_IDS)} predictions, one every {DELAY_SECONDS}s.")
-    print("Keep the Dashboard open in your browser to watch them appear.\n")
+    print(f"Sending {len(DEMO_PATIENT_IDS)} predictions, one at a time, via the streaming endpoint.")
+    print("Keep the Dashboard open in your browser -- the 'Now Processing' panel")
+    print("will show each patient and stage live, with no action needed there.\n")
 
     ok, failed, flagged = 0, 0, 0
     for i, pid in enumerate(DEMO_PATIENT_IDS, start=1):
         record = all_predictions[pid]
-        print(f"[{i}/{len(DEMO_PATIENT_IDS)}] Sending {pid} "
+        print(f"[{i}/{len(DEMO_PATIENT_IDS)}] {pid} "
               f"({record['prediction']}, {record['model_version']}, "
-              f"conf={record['confidence']})...", end=" ", flush=True)
+              f"conf={record['confidence']})")
 
         try:
-            response = requests.post(API_URL, json=record, timeout=90)
+            final_status = process_one_patient(record)
+        except TimeoutError as exc:
+            print(f"    TIMED OUT (this script gave up watching): {exc}")
+            failed += 1
+            continue
         except requests.exceptions.RequestException as exc:
-            print(f"FAILED (request error: {exc})")
+            print(f"    FAILED (request error): {exc}")
             failed += 1
             continue
 
-        if response.status_code == 201:
-            body = response.json()
-            ok += 1
-            if body.get("flagged"):
-                flagged += 1
-            print(f"OK -- {'FLAGGED' if body.get('flagged') else 'cleared'}")
-        else:
+        if final_status["error"]:
+            print(f"    FAILED: {final_status['error']}")
             failed += 1
-            print(f"FAILED ({response.status_code}): {response.text}")
+        else:
+            ok += 1
+            twin_flagged = final_status["twin"]["flagged"]
+            if twin_flagged:
+                flagged += 1
+            print(f"    DONE -- {'FLAGGED' if twin_flagged else 'cleared'}")
 
         if i < len(DEMO_PATIENT_IDS):
-            time.sleep(DELAY_SECONDS)
+            time.sleep(DELAY_BETWEEN_PATIENTS_SECONDS)
 
     print(f"\nDone. {ok} succeeded, {failed} failed, {flagged} flagged for review.")
     if failed:

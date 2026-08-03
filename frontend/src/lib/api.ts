@@ -122,6 +122,43 @@ export async function getRulebookChangelog(limit = 20): Promise<{ entries: Chang
 }
 
 // ---------------------------------------------------------------------------
+// Live pipeline demo (streaming ingestion)
+// ---------------------------------------------------------------------------
+export interface PipelineStatus {
+  current_stage: string | null;
+  completed_stages: string[];
+  done: boolean;
+  error: string | null;
+  twin: DigitalTwin | null;
+}
+
+export async function getActivePredictionStream(): Promise<{ active: (PipelineStatus & { patient_id: string; request_id: string }) | null }> {
+  const res = await fetch(`${API_URL}/predictions/stream/active`);
+  return handle(res);
+}
+
+export async function getDemoPatients(): Promise<{ patients: unknown[] }> {
+  const res = await fetch(`${API_URL}/demo/patients`);
+  return handle(res);
+}
+
+export async function startPredictionStream(
+  record: unknown
+): Promise<{ request_id: string; status: string }> {
+  const res = await fetch(`${API_URL}/predictions/stream`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(record),
+  });
+  return handle(res);
+}
+
+export async function getPredictionStreamStatus(requestId: string): Promise<PipelineStatus> {
+  const res = await fetch(`${API_URL}/predictions/stream/${requestId}/status`);
+  return handle(res);
+}
+
+// ---------------------------------------------------------------------------
 // Trust monitoring
 // ---------------------------------------------------------------------------
 export async function getTrustMonitoringSummary(
