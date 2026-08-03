@@ -1,0 +1,9 @@
+drift:
+  confidence_drop_threshold_pct: 15.0
+  flag_rate_threshold_pct: 10.0
+  default_window_days: 7
+
+rag:
+  low_grounding_threshold: 0.40
+  top_k: 2
+  embedding_model: all-MiniLM-L6-v2

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "kb001",
+    "condition": "Pneumonia",
+    "text": "Common presenting symptoms of pneumonia include fever, cough (often productive), shortness of breath, chest pain, fatigue, and low oxygen saturation. Risk factors include smoking history, immunocompromised status, recent hospitalization, and advanced age.",
+    "source": "CDC Pneumonia Clinical Overview"
+  },
+  {
+    "id": "kb002",
+    "condition": "Pneumonia",
+    "text": "Confusion or altered mental status can be a presenting symptom of pneumonia in elderly patients, sometimes appearing without classic respiratory symptoms such as cough or fever.",
+    "source": "CDC Pneumonia Clinical Overview"
+  },
+  {
+    "id": "kb003",
+    "condition": "Pneumonia",
+    "text": "Wheezing, sputum production, and rapid breathing are respiratory findings frequently associated with lower respiratory tract infections including pneumonia, particularly in patients with underlying chronic respiratory conditions such as COPD or asthma.",
+    "source": "CDC Pneumonia Clinical Overview"
+  },
+  {
+    "id": "kb004",
+    "condition": "Tumor",
+    "text": "A tumor finding on imaging may present with non-specific symptoms such as unexplained weight loss, fatigue, or localized pain, and is more frequently investigated in patients with advanced age or relevant prior history.",
+    "source": "General Radiology Reference"
+  },
+  {
+    "id": "kb005",
+    "condition": "Cancer",
+    "text": "Risk factors commonly associated with a cancer-flagged imaging finding include advanced age, smoking history, and prior relevant diagnoses. Confirmatory diagnostic workup beyond imaging is required before treatment decisions are made.",
+    "source": "General Oncology Reference"
+  },
+  {
+    "id": "kb006",
+    "condition": "Normal",
+    "text": "A normal chest X-ray finding indicates no visible signs of pneumonia, mass, or significant abnormality. Some patients with normal imaging may still present with mild, non-specific symptoms unrelated to a respiratory infection.",
+    "source": "Radiology Reporting Reference"
+  },
+  {
+    "id": "kb007",
+    "condition": "Normal",
+    "text": "Mild or isolated symptoms such as fatigue, loss of appetite, or occasional cough are common in the general patient population and do not, on their own, indicate an abnormal chest X-ray finding.",
+    "source": "Radiology Reporting Reference"
+  },
+  {
+    "id": "kb008",
+    "condition": "Pneumonia",
+    "text": "Elderly patients living in long-term care facilities are at elevated risk for pneumonia due to closer contact exposure, comorbidities, and age-related decline in immune response.",
+    "source": "CDC Pneumonia Clinical Overview"
+  }
+]

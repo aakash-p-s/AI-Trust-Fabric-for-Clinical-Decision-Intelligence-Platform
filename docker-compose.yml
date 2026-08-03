@@ -1,0 +1,35 @@
+# Autonomous AI Trust Fabric — docker-compose.yml
+#
+# Scope note: this project deliberately does NOT include Kafka, Airflow,
+# Keycloak, or any message queue. The only containerized service is
+# PostgreSQL, used as the Digital Twin store + audit log. Everything else
+# (FastAPI backend, LangGraph agents, React frontend, the in-process
+# APScheduler job) runs directly on the host — see README.md.
+#
+# If you prefer not to use Docker at all, install PostgreSQL locally or
+# swap DATABASE_URL in .env to a SQLite path; the SQLAlchemy models in
+# backend/db/models.py are dialect-agnostic.
+
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: trust_fabric_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: trust_fabric
+      POSTGRES_PASSWORD: trust_fabric_dev_password
+      POSTGRES_DB: trust_fabric
+    ports:
+      - "5432:5432"
+    volumes:
+      - trust_fabric_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U trust_fabric"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  trust_fabric_pgdata:

@@ -1,0 +1,38 @@
+# Autonomous AI Trust Fabric — Backend Requirements
+# Python 3.11
+
+# --- Web framework ---
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+pydantic==2.7.1
+python-multipart==0.0.9
+
+# --- Database ---
+sqlalchemy==2.0.30
+psycopg2-binary==2.9.9
+alembic==1.13.1
+
+# --- Agent orchestration ---
+langgraph==0.1.9
+langchain==0.2.3
+langchain-openai==0.1.8
+openai==1.30.0
+
+# --- RAG (Explainability Agent grounding) ---
+sentence-transformers==2.7.0
+numpy==1.26.4
+faiss-cpu==1.8.0
+
+# --- Scheduling (Trust Monitoring job) ---
+apscheduler==3.10.4
+
+# --- Config / env ---
+python-dotenv==1.0.1
+pyyaml==6.0.1
+
+# --- Testing ---
+pytest==8.2.0
+httpx==0.27.0
+
+# --- CORS / dev ---
+python-jose[cryptography]==3.3.0  # reserved for future auth upgrade, unused in phase 1

@@ -1,0 +1,12 @@
+{
+  "approved_model_versions": [
+    "v2.0",
+    "v2.1"
+  ],
+  "minimum_confidence_threshold": 0.75,
+  "high_risk_conditions_requiring_review": [
+    "Pneumonia",
+    "Tumor",
+    "Cancer"
+  ]
+}
