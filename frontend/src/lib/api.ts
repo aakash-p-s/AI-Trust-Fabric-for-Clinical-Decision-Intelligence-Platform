@@ -1,5 +1,6 @@
 import type {
   ChangelogEntry,
+  ChatTurn,
   ComplianceRulebook,
   DashboardSummary,
   DigitalTwin,
@@ -179,5 +180,20 @@ export async function runTrustCheckNow(
 
 export async function getDriftAlerts(limit = 20): Promise<{ alerts: DriftAlert[] }> {
   const res = await fetch(`${API_URL}/trust-monitoring/alerts?limit=${limit}`);
+  return handle(res);
+}
+
+// ---------------------------------------------------------------------------
+// AI Governance Assistant (chatbot)
+// ---------------------------------------------------------------------------
+export async function sendChatMessage(
+  message: string,
+  history: ChatTurn[]
+): Promise<{ reply: string; tools_used: string[] }> {
+  const res = await fetch(`${API_URL}/chat`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message, history }),
+  });
   return handle(res);
 }

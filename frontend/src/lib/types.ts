@@ -1,5 +1,10 @@
 export type Role = "clinician" | "compliance_governance";
 
+export interface ChatTurn {
+  role: "user" | "assistant";
+  content: string;
+}
+
 export interface User {
   username: string;
   role: Role;

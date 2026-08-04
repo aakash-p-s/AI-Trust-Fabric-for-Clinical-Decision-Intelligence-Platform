@@ -218,3 +218,21 @@ class DashboardSummary(BaseModel):
     flagged_pct: float
     avg_confidence: float
     active_drift_alerts: int
+
+
+# ---------------------------------------------------------------------------
+# AI Governance Assistant (chatbot)
+# ---------------------------------------------------------------------------
+class ChatTurn(BaseModel):
+    role: Literal["user", "assistant"]
+    content: str
+
+
+class ChatRequest(BaseModel):
+    message: str
+    history: list[ChatTurn] = []
+
+
+class ChatResponse(BaseModel):
+    reply: str
+    tools_used: list[str] = []

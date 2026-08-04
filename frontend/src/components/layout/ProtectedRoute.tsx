@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Navigate } from "react-router-dom";
+import ChatWidget from "../chat/ChatWidget";
 import { useAuth } from "../../contexts/AuthContext";
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
@@ -27,6 +28,7 @@ export default function ProtectedRoute({ children, requiredRole }: Props) {
         <Topbar />
         <main className="flex-1 p-6">{children}</main>
       </div>
+      <ChatWidget />
     </div>
   );
 }
