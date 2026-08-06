@@ -6,6 +6,8 @@ import type {
   DigitalTwin,
   DigitalTwinDetail,
   DriftAlert,
+  GovernanceSummary,
+  PatientProcessingLogEntry,
   TrustMonitoringSummary,
   TwinListResponse,
   User,
@@ -195,5 +197,20 @@ export async function sendChatMessage(
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ message, history }),
   });
+  return handle(res);
+}
+
+// ---------------------------------------------------------------------------
+// Governance
+// ---------------------------------------------------------------------------
+export async function getGovernanceSummary(): Promise<GovernanceSummary> {
+  const res = await fetch(`${API_URL}/governance/summary`);
+  return handle(res);
+}
+
+export async function getPatientProcessingLog(
+  limit = 50
+): Promise<{ entries: PatientProcessingLogEntry[] }> {
+  const res = await fetch(`${API_URL}/governance/patient-processing-log?limit=${limit}`);
   return handle(res);
 }

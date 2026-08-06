@@ -15,3 +15,4 @@ class AgentState(TypedDict):
     explanation: Optional[dict]
     twin: Optional[dict]
     error: Optional[str]
+    stage_durations_ms: dict  # {"lineage": 12, "compliance": 4, "explainability": 5900, "twin_assembler": 3}

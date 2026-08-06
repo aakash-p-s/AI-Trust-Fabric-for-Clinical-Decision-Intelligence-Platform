@@ -67,6 +67,7 @@ def list_twins(
             patient_id=r.patient_id,
             prediction=PredictionSummary(**r.prediction),
             flagged=r.flagged,
+            review=r.review,
             twin_created_at=r.twin_created_at,
         )
         for r in page_rows
@@ -145,6 +146,9 @@ def _twin_fields(row: DigitalTwinRow) -> dict:
         "explanation_type": row.explanation_type,
         "grounded_in_sources": row.grounded_in_sources,
         "low_grounding_confidence": row.low_grounding_confidence,
+        "explanation_cascade": row.explanation_cascade,
+        "rag_details": row.rag_details,
+        "stage_durations_ms": row.stage_durations_ms,
         "flagged": row.flagged,
         "twin_created_at": row.twin_created_at,
         "review": row.review,

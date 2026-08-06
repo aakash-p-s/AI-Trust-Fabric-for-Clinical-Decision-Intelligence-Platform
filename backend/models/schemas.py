@@ -93,6 +93,31 @@ class LineageRecord(BaseModel):
     model_version: str
 
 
+class ExplainabilityCascadeAttempt(BaseModel):
+    model_config = {"protected_namespaces": ()}
+
+    model: str
+    status: Literal["success", "failed"]
+    reason: Optional[str] = None
+
+
+class ExplainabilityCascade(BaseModel):
+    model_config = {"protected_namespaces": ()}
+
+    final_source: Literal["primary_llm", "fallback_llm", "deterministic_fallback"]
+    model_used: Optional[str] = None
+    attempts: list[ExplainabilityCascadeAttempt]
+    token_usage: Optional[dict] = None
+    duration_ms: int
+
+
+class RagDetails(BaseModel):
+    status: Literal["live", "degraded", "unavailable"]
+    chunks_found: int
+    top_similarity_score: float
+    error: Optional[str] = None
+
+
 class DigitalTwin(BaseModel):
     twin_id: str
     patient_id: str
@@ -100,9 +125,12 @@ class DigitalTwin(BaseModel):
     lineage: LineageRecord
     compliance: ComplianceResult
     explanation: str
-    explanation_type: Literal["narrative_llm_rag_grounded"]
+    explanation_type: Literal["narrative_llm_rag_grounded", "fallback_deterministic"]
     grounded_in_sources: list[GroundedSource]
     low_grounding_confidence: bool
+    explanation_cascade: Optional[ExplainabilityCascade] = None
+    rag_details: Optional[RagDetails] = None
+    stage_durations_ms: Optional[dict] = None
     flagged: bool
     twin_created_at: datetime
     review: Optional[ReviewRecord] = None
@@ -118,6 +146,7 @@ class TwinSummary(BaseModel):
     patient_id: str
     prediction: PredictionSummary
     flagged: bool
+    review: Optional[ReviewRecord] = None
     twin_created_at: datetime
 
 
@@ -236,3 +265,33 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     reply: str
     tools_used: list[str] = []
+
+
+# ---------------------------------------------------------------------------
+# Governance page
+# ---------------------------------------------------------------------------
+class GovernanceSummary(BaseModel):
+    total_processed: int
+    avg_total_time_ms: float
+    avg_explainability_ms: float
+    total_tokens: int
+    rag_live_rate_pct: float
+    fallback_rate_pct: float
+
+
+class PatientProcessingLogEntry(BaseModel):
+    model_config = {"protected_namespaces": ()}
+
+    twin_id: str
+    patient_id: str
+    stage_durations_ms: dict
+    total_duration_ms: int
+    rag_details: Optional[RagDetails] = None
+    explanation_cascade: Optional[ExplainabilityCascade] = None
+    flagged: bool
+    review: Optional[ReviewRecord] = None
+    twin_created_at: datetime
+
+
+class PatientProcessingLogResponse(BaseModel):
+    entries: list[PatientProcessingLogEntry]

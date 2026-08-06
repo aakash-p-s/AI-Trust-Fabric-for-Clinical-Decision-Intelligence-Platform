@@ -58,6 +58,49 @@ export interface TwinSummary {
   patient_id: string;
   prediction: PredictionSummary;
   flagged: boolean;
+  review: ReviewRecord | null;
+  twin_created_at: string;
+}
+
+export interface ExplainabilityCascadeAttempt {
+  model: string;
+  status: "success" | "failed";
+  reason: string | null;
+}
+
+export interface ExplainabilityCascade {
+  final_source: "primary_llm" | "fallback_llm" | "deterministic_fallback";
+  model_used: string | null;
+  attempts: ExplainabilityCascadeAttempt[];
+  token_usage: { prompt_tokens: number; completion_tokens: number; total_tokens: number } | null;
+  duration_ms: number;
+}
+
+export interface RagDetails {
+  status: "live" | "degraded" | "unavailable";
+  chunks_found: number;
+  top_similarity_score: number;
+  error: string | null;
+}
+
+export interface GovernanceSummary {
+  total_processed: number;
+  avg_total_time_ms: number;
+  avg_explainability_ms: number;
+  total_tokens: number;
+  rag_live_rate_pct: number;
+  fallback_rate_pct: number;
+}
+
+export interface PatientProcessingLogEntry {
+  twin_id: string;
+  patient_id: string;
+  stage_durations_ms: Record<string, number>;
+  total_duration_ms: number;
+  rag_details: RagDetails | null;
+  explanation_cascade: ExplainabilityCascade | null;
+  flagged: boolean;
+  review: ReviewRecord | null;
   twin_created_at: string;
 }
 
@@ -71,6 +114,9 @@ export interface DigitalTwin {
   explanation_type: string;
   grounded_in_sources: GroundedSource[];
   low_grounding_confidence: boolean;
+  explanation_cascade?: ExplainabilityCascade | null;
+  rag_details?: RagDetails | null;
+  stage_durations_ms?: Record<string, number> | null;
   flagged: boolean;
   twin_created_at: string;
   review: ReviewRecord | null;

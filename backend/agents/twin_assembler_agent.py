@@ -29,6 +29,8 @@ def twin_assembler_node(state: AgentState) -> AgentState:
         "explanation_type": exp["explanation_type"],
         "grounded_in_sources": exp["grounded_in_sources"],
         "low_grounding_confidence": exp["low_grounding_confidence"],
+        "explanation_cascade": exp.get("cascade"),
+        "rag_details": exp.get("rag"),
         "flagged": state["compliance"]["flagged"],
         "twin_created_at": datetime.now(timezone.utc).isoformat(),
         "review": None,

@@ -433,11 +433,9 @@
 // }
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import LiveDemoPanel from "../components/ui/LiveDemoPanel";
 import MetricCard from "../components/ui/MetricCard";
 import NowProcessingPanel from "../components/ui/NowProcessingPanel";
 import StatusBadge from "../components/ui/StatusBadge";
-import { useAuth } from "../contexts/AuthContext";
 import { getDashboardSummary, listTwins, type TwinListParams } from "../lib/api";
 import type { DashboardSummary, TwinSummary } from "../lib/types";
 import { formatConfidence } from "../lib/utils";
@@ -445,9 +443,14 @@ import { formatConfidence } from "../lib/utils";
 const PAGE_SIZE = 20;
 const LIVE_REFRESH_INTERVAL_MS = 5000;
 
+function twinStatus(t: TwinSummary): "Cleared" | "Pending Review" | "Approved" | "Overridden" {
+  if (!t.flagged) return "Cleared";
+  if (!t.review) return "Pending Review";
+  return t.review.decision === "approve" ? "Approved" : "Overridden";
+}
+
 export default function Dashboard() {
   const navigate = useNavigate();
-  const { user } = useAuth();
 
   const [summary, setSummary] = useState<DashboardSummary | null>(null);
   const [twins, setTwins] = useState<TwinSummary[]>([]);
@@ -536,10 +539,6 @@ export default function Dashboard() {
 
       <NowProcessingPanel onPatientDone={() => fetchAllRef.current()} />
 
-      {user?.role === "compliance_governance" && (
-        <LiveDemoPanel onTwinCreated={() => fetchAllRef.current()} />
-      )}
-
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <MetricCard label="Total Predictions" value={summary?.total_predictions ?? "-"} subtext="All time" />
         <MetricCard
@@ -625,14 +624,14 @@ export default function Dashboard() {
                 <td className="py-2 px-4">{t.prediction.label}</td>
                 <td className="py-2 px-4">{formatConfidence(t.prediction.confidence)}</td>
                 <td className="py-2 px-4">
-                  <StatusBadge status={t.flagged ? "Flagged" : "Cleared"} />
+                  <StatusBadge status={twinStatus(t)} />
                 </td>
                 <td className="py-2 px-4">
                   <button
                     className="border border-gray-300 rounded-md px-3 py-1 text-xs font-medium hover:bg-gray-50"
                     onClick={() => navigate(`/twins/${t.twin_id}`)}
                   >
-                    {t.flagged ? "Review" : "View"}
+                    {t.flagged && !t.review ? "Review" : "View"}
                   </button>
                 </td>
               </tr>

@@ -36,3 +36,6 @@ httpx==0.27.0
 
 # --- CORS / dev ---
 python-jose[cryptography]==3.3.0  # reserved for future auth upgrade, unused in phase 1
+
+# --- Explainability Agent fallback tier (OpenRouter HTTP call) ---
+requests==2.31.0

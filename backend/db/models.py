@@ -74,6 +74,9 @@ class DigitalTwinRow(Base):
     explanation_type = Column(String, nullable=False)
     grounded_in_sources = Column(JSON, nullable=False)  # list[{id, source, similarity_score}]
     low_grounding_confidence = Column(Boolean, nullable=False, default=False)
+    explanation_cascade = Column(JSON, nullable=True)  # {final_source, model_used, attempts, token_usage, duration_ms}
+    rag_details = Column(JSON, nullable=True)  # {status, chunks_found, top_similarity_score, error}
+    stage_durations_ms = Column(JSON, nullable=True)  # {lineage, compliance, explainability, twin_assembler}
     flagged = Column(Boolean, nullable=False, default=False, index=True)
     twin_created_at = Column(DateTime(timezone=True), default=_now)
     review = Column(JSON, nullable=True)  # {reviewed_by, decision, notes, reviewed_at} | null

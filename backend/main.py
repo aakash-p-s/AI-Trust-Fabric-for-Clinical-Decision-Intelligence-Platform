@@ -15,7 +15,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from backend.db.session import SessionLocal, init_engine
-from backend.routers import auth, chat, dashboard, demo, patients, predictions, rulebook, trust_monitoring, twins
+from backend.routers import auth, chat, dashboard, demo, governance, patients, predictions, rulebook, trust_monitoring, twins
 from backend.services import rag_service
 from backend.trust_monitoring.monitor import run_trust_check
 
@@ -41,6 +41,7 @@ app.include_router(patients.router)
 app.include_router(dashboard.router)
 app.include_router(demo.router)
 app.include_router(chat.router)
+app.include_router(governance.router)
 
 _scheduler = BackgroundScheduler()
 

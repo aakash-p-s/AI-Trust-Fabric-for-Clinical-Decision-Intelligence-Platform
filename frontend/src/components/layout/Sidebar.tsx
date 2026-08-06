@@ -1,4 +1,4 @@
-import { LayoutDashboard, ShieldCheck, Activity, ShieldHalf } from "lucide-react";
+import { LayoutDashboard, ShieldCheck, Activity, ShieldHalf, ClipboardList } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 
@@ -29,6 +29,9 @@ export default function Sidebar() {
               </NavLink>
               <NavLink to="/trust-monitoring" className={linkClass}>
                 <Activity size={16} /> Trust Monitoring
+              </NavLink>
+              <NavLink to="/governance" className={linkClass}>
+                <ClipboardList size={16} /> Governance
               </NavLink>
             </>
           )}
